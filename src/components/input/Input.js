@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
+import { inputContext } from "../context/Context";
 import "./input.scss";
 
-const Input = () => {
-  return <input type="text" autoFocus={true} autoComplete="off" maxLength={1} />;
+const Input = (props) => {
+  const context = useContext(inputContext);
+  console.log(props.index);
+  return (
+    <input
+      className="input"
+      key={props.index}
+      value={props.value}
+      onChange={(e) => context.changeHandler(e, props.index)}
+      type="text"
+      maxLength={1}
+    />
+  );
 };
 
 export default Input;
