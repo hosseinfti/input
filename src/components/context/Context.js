@@ -6,7 +6,6 @@ export const inputContext = React.createContext();
 const Context = () => {
   const [otp, setOtp] = useState(new Array(4).fill(""));
 
-  // const handleOTP = () => {};
   const changeHandler = (e, index) => {
     if (isNaN(e.target.value)) {
       return false;
